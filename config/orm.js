@@ -22,11 +22,11 @@ let orm = {
             }
         );
     },
-    updateOne: (tableInput, burgerName, cb) =>{
-        let toUpdate = {devoured: true};
-        let condition = {burger_name: burgerName};
+    updateOne: (tableInput, burgerId, cb) =>{
+        let toUpdate = {devoured: 1};
+        let condition = {id: burgerId};
         let queryString = "UPDATE ?? SET ? WHERE ?"
-        connection.query(
+        let query = connection.query(
             queryString,
             [tableInput, toUpdate, condition],
             (err, result) => {
@@ -35,11 +35,8 @@ let orm = {
                 cb(result);
             }
         );
+        console.log(query.sql);
     }
 }
 
 module.exports = orm;
-// connection.query("SELECT * FROM burgers", (err,result) => {
-//     if (err) throw err;
-//     console.log(result);
-// });
