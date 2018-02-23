@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", function(event) { 
-    var newBurgerButton = document.getElementById("submitBurger");
-    var devourButtons = document.getElementsByClassName("change-devoured");
-    var notEatenLi = document.getElementsByClassName("not-eaten");
-    var eatenLi = document.getElementsByClassName("eaten");
+    let newBurgerButton = document.getElementById("submitBurger");
+    let devourButtons = document.getElementsByClassName("change-devoured");
+    let notEatenLi = document.getElementsByClassName("not-eaten");
+    let eatenLi = document.getElementsByClassName("eaten");
 
     if (notEatenLi !== null && eatenLi !== null){
         if(notEatenLi.length >= eatenLi.length){
@@ -11,7 +11,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
             document.getElementById("eatenWell").style.borderLeft = "3px solid black";
         }
     }
-
     
     let devourHandler = (e) =>{
         let id = e.target.attributes["1"].value;
